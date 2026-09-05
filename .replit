@@ -1,0 +1,17 @@
+# Конфигурация для Replit: сам проект лежит в подпапке «Лабораторная 1»,
+# поэтому все команды выполняются с переходом в неё.
+run = "cd 'Лабораторная 1' && python manage.py runserver 0.0.0.0:8000"
+entrypoint = "Лабораторная 1/manage.py"
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "cloudrun"
+build = ["sh", "-c", "cd 'Лабораторная 1' && pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata books"]
+run = ["sh", "-c", "cd 'Лабораторная 1' && python manage.py runserver 0.0.0.0:8000"]

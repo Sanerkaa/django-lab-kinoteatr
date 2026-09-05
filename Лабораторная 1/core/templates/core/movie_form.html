@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block title %}Добавить фильм{% endblock %}
+
+{% block content %}
+<p class="breadcrumbs"><a href="{% url 'movie_list' %}">← Назад к афише</a></p>
+
+<h1>Добавить фильм</h1>
+
+<form class="card form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

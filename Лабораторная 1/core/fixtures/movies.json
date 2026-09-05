@@ -1,0 +1,90 @@
+[
+  {
+    "model": "core.movie",
+    "pk": 1,
+    "fields": {
+      "title": "Интерстеллар",
+      "genre": "Фантастика",
+      "duration_min": 169,
+      "rating": "8.6",
+      "release_year": 2014
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 2,
+    "fields": {
+      "title": "Начало",
+      "genre": "Фантастика",
+      "duration_min": 148,
+      "rating": "8.7",
+      "release_year": 2010
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 3,
+    "fields": {
+      "title": "Зелёная миля",
+      "genre": "Драма",
+      "duration_min": 189,
+      "rating": "9.1",
+      "release_year": 1999
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 4,
+    "fields": {
+      "title": "Криминальное чтиво",
+      "genre": "Криминал",
+      "duration_min": 154,
+      "rating": "8.6",
+      "release_year": 1994
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 5,
+    "fields": {
+      "title": "Унесённые призраками",
+      "genre": "Аниме",
+      "duration_min": 125,
+      "rating": "8.5",
+      "release_year": 2001
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 6,
+    "fields": {
+      "title": "Гранд-отель «Будапешт»",
+      "genre": "Комедия",
+      "duration_min": 100,
+      "rating": "8.1",
+      "release_year": 2014
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 7,
+    "fields": {
+      "title": "Дюна",
+      "genre": "Фантастика",
+      "duration_min": 155,
+      "rating": "7.9",
+      "release_year": 2021
+    }
+  },
+  {
+    "model": "core.movie",
+    "pk": 8,
+    "fields": {
+      "title": "Паразиты",
+      "genre": "Триллер",
+      "duration_min": 132,
+      "rating": "8.6",
+      "release_year": 2019
+    }
+  }
+]

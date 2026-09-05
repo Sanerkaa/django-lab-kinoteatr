@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+
+{% block title %}Афиша{% endblock %}
+
+{% block content %}
+<h1>Афиша кинотеатра</h1>
+
+<form class="search" method="get" action="">
+    <input type="text" name="q" value="{{ query }}" placeholder="Поиск по названию…">
+    <button type="submit">Найти</button>
+    {% if query %}<a class="reset" href="{% url 'movie_list' %}">Сбросить</a>{% endif %}
+</form>
+
+{% if movies %}
+<table class="grid">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Жанр</th>
+            <th>Год</th>
+            <th>Длительность</th>
+            <th>Рейтинг</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <td><a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a></td>
+            <td>{{ movie.genre|default:"—" }}</td>
+            <td>{{ movie.release_year }}</td>
+            <td>{{ movie.duration_pretty }}</td>
+            <td>
+                {% if movie.rating >= 8 %}
+                    <span class="badge badge--ok">{{ movie.rating }}</span>
+                {% else %}
+                    <span class="badge badge--mid">{{ movie.rating }}</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="muted">Всего фильмов: {{ movies|length }}</p>
+{% else %}
+<p class="muted">Фильмы не найдены. <a href="{% url 'movie_create' %}">Добавить первый</a>.</p>
+{% endif %}
+{% endblock %}

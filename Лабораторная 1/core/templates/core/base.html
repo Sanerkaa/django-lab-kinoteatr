@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Кинотеатр{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="{% url 'movie_list' %}">🎬 Кинотеатр</a>
+        <nav>
+            <a href="{% url 'movie_list' %}">Афиша</a>
+            <a href="{% url 'movie_create' %}">Добавить фильм</a>
+            <a href="/admin/">Админ-панель</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        Лабораторная работа №1 «Знакомство с Django» · вариант 6 «Кинотеатр» · НГУЭУ «НИНХ»
+    </footer>
+</body>
+</html>

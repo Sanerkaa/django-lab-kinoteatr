@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block content %}
+<p class="breadcrumbs"><a href="{% url 'movie_list' %}">← Назад к афише</a></p>
+
+<h1>{{ movie.title }}</h1>
+
+<dl class="card">
+    <dt>Жанр</dt><dd>{{ movie.genre|default:"не указан" }}</dd>
+    <dt>Год выхода</dt><dd>{{ movie.release_year }}</dd>
+    <dt>Длительность</dt><dd>{{ movie.duration_pretty }} ({{ movie.duration_min }} мин)</dd>
+    <dt>Рейтинг</dt>
+    <dd>
+        {% if movie.rating >= 8 %}
+            <span class="badge badge--ok">{{ movie.rating }} / 10</span>
+        {% else %}
+            <span class="badge badge--mid">{{ movie.rating }} / 10</span>
+        {% endif %}
+    </dd>
+    <dt>ID записи</dt><dd>{{ movie.pk }}</dd>
+</dl>
+{% endblock %}
